@@ -18,13 +18,15 @@ pipeline {
 
     stages {
 
+       
         stage('Checkout') {
-            steps {
-                dir('terraform') {
-                    git 'https://github.com/iamkavitha/Terraform-Jenkins.git'
-                }
-            }
+    steps {
+        dir('terraform') {
+            git branch: 'main',
+                url: 'https://github.com/iamkavitha/Terraform-Jenkins.git'
         }
+    }
+}
 
         stage('Terraform Init') {
             steps {
